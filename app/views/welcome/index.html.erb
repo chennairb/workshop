@@ -4,6 +4,9 @@
 	padding: 1rem;
 	color: #2B3E50;
 }
+.details a{
+	color: #2B3E50;
+}
 
 #intro{
 	margin-top: 5rem;
@@ -77,7 +80,10 @@
 	</p>
 
 	<p id='register'>
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#register-form">Register</button>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" 
+			data-target="#register-form">
+			Register
+		</button>
 	</p>
 </div>
 
@@ -104,11 +110,16 @@
 
 <div id='coaches'>
 	<h2 class='text-warning'>Coaches</h2>
-	<p class='details'>
-		Vysakh Sreenivasan <br>
-		Steve Robinson <br>
-		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#join-as-coach-form">Join as Coach</button>
-	</p>
+	<div class='details'>
+		<ul style='padding:0'>
+			<li> <a href="https://twitter.com/vysakh0">Vysakh Sreenivasan</a></li>
+			<li> <a href="https://twitter.com/stev4niTy">Steve Robinson</a></li>
+		</ul>
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" 
+			data-target="#join-as-coach-form">
+			Join as Coach
+		</button>
+	</div>
 </div>
 
 
@@ -119,43 +130,52 @@
 </div>
 
 
-<div id='register-form' class='modal fade' tabindex="-1" role="dialog" aria-labelledby="register-form" aria-hidden="true">
-	<div class="modal-dialog"><div class="modal-content">
+<div id='register-form' class='modal fade' tabindex="-1" role="dialog" 
+	aria-labelledby="register-form" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
 
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h4 class="modal-title">Participant</h4>
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	      <h4 class="modal-title">Participant</h4>
+			</div>
+
+	    <div class="modal-body">
+	      <%= render 'participants/form3' %>
+	    </div>
+
 		</div>
-
-    <div class="modal-body">
-      <%= render 'participants/form3' %>
-    </div>
-
-	</div></div>
+	</div>
 </div>
 
-<div id='join-as-coach-form' class='modal fade' tabindex="-1" role="dialog" aria-labelledby="register-form" aria-hidden="true">
-	<div class="modal-dialog"><div class="modal-content">
+<div id='join-as-coach-form' class='modal fade' tabindex="-1" role="dialog" 
+	aria-labelledby="register-form" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
 
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h4 class="modal-title">Coach</h4>
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	      <h4 class="modal-title">Coach</h4>
+			</div>
+
+	    <div class="modal-body">
+	      <%= render 'coaches/form3' %>
+	    </div>
+
 		</div>
-
-    <div class="modal-body">
-      <%= render 'coaches/form3' %>
-    </div>
-
-	</div></div>
+	</div>
 </div>
 
-<div id='notice-modal' class='modal fade' tabindex="-1" role="dialog" aria-labelledby="register-form" aria-hidden="true">
-	<div class="modal-dialog"><div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h4 class="modal-title notice-statment">Awesome. Thanks.</h4>
-		</div>		
-	</div></div>
+<div id='notice-modal' class='modal fade' tabindex="-1" role="dialog" 
+	aria-labelledby="register-form" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h4 class="modal-title notice-statment">Awesome. Thanks.</h4>
+			</div>		
+		</div>
+	</div>
 </div>
 
 <br><br>
