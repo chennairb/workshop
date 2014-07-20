@@ -1,0 +1,52 @@
+<style type="text/css">
+#coach-form {
+	font-size: 2rem;
+	line-height: 4rem;
+}
+#coach-form input[type='text']{
+	line-height: 1rem;
+	color: #fff;
+	background-color: #4E5D6C;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px dotted;
+}
+
+#coach-form select{
+	color: #2B3E50;
+	font-size: 1.5rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+#coach-form input[type='submit']{
+	font-size: 1.5rem;
+}
+
+</style>
+
+<%= form_for(@coach, remote: true, html: {class: 'form-inline', id: 'coach-form'}) do |f| %>
+
+	My name is <%= f.text_field :name %>
+
+	<br>
+	My twitter handle is <%= f.text_field :email %>, 
+
+	<br>
+	and my email id is <%= f.text_field :email %>
+
+	<br>
+	I <%= f.select :attended_meetups, 
+		options_for_select(Coach.attended_meetups_options) %>
+		attended Chennai.rb meetups before.
+
+	<br>
+	I <%= f.select :living_in_chennai, 
+	  options_for_select(Coach.living_in_chennai_options) %>
+	  in Chennai.
+
+	<br>
+	<%= f.submit 'Count me in', class: 'btn btn-warning' %>
+		
+<% end %>

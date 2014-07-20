@@ -1,0 +1,58 @@
+<style type="text/css">
+#participant-form{
+	font-size: 2rem;
+	line-height: 4rem;
+}
+#participant-form input[type='text']{
+	line-height: 1rem;
+	color: #fff;
+	background-color: #4E5D6C;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px dotted;
+}
+
+#participant-form select{
+	color: #2B3E50;
+	font-size: 1.5rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+#participant-form input[type='submit']{
+	font-size: 1.5rem;
+}
+
+</style>
+
+<%= form_for(@participant, remote: true, html: {class: 'form-inline', id: 'participant-form'}) do |f| %>
+
+	My name is <%= f.text_field :name %>
+
+	<br>
+	I'm a <%= f.select :student_or_employed, 
+		options_for_select(Participant.student_or_employed_options) %>.
+
+	<br>
+	I <%= f.select :attended_meetups, 
+		options_for_select(Participant.attended_meetups_options) %> 
+		attended Chennai.rb meetups before.
+
+	<br>
+	I <%= f.select :have_ruby_configured_laptop, 
+		options_for_select(Participant.have_ruby_configured_laptop_options) %>
+		a Ruby configured laptop.
+
+	<br>
+	I <%= f.select :living_in_chennai, 
+		options_for_select(Participant.living_in_chennai_options) %>
+		in Chennai.
+
+	<br>
+	My email-id is <%= f.text_field :email %>
+
+	<br>
+	<%= f.submit 'Lets go', class: 'btn btn-primary' %>
+		
+<% end %>
