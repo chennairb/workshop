@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @participant.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @participant.email %>
+</p>
+
+<p>
+  <strong>Attended meetups:</strong>
+  <%= @participant.attended_meetups %>
+</p>
+
+<p>
+  <strong>Living in chennai:</strong>
+  <%= @participant.living_in_chennai %>
+</p>
+
+<p>
+  <strong>Student or employed:</strong>
+  <%= @participant.student_or_employed %>
+</p>
+
+<p>
+  <strong>Have ruby configured laptop:</strong>
+  <%= @participant.have_ruby_configured_laptop %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @participant.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>

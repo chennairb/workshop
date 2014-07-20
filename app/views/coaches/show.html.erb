@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @coach.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @coach.email %>
+</p>
+
+<p>
+  <strong>Twitter handle:</strong>
+  <%= @coach.twitter_handle %>
+</p>
+
+<p>
+  <strong>Attended meetups:</strong>
+  <%= @coach.attended_meetups %>
+</p>
+
+<p>
+  <strong>Living in chennai:</strong>
+  <%= @coach.living_in_chennai %>
+</p>
+
+<%= link_to 'Edit', edit_coach_path(@coach) %> |
+<%= link_to 'Back', coaches_path %>

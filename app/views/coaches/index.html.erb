@@ -1,0 +1,33 @@
+<h1>Listing coaches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Twitter handle</th>
+      <th>Attended meetups</th>
+      <th>Living in chennai</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coaches.each do |coach| %>
+      <tr>
+        <td><%= coach.name %></td>
+        <td><%= coach.email %></td>
+        <td><%= coach.twitter_handle %></td>
+        <td><%= coach.attended_meetups %></td>
+        <td><%= coach.living_in_chennai %></td>
+        <td><%= link_to 'Show', coach %></td>
+        <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
+        <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coach', new_coach_path %>

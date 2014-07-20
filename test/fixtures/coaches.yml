@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  twitter_handle: MyString
+  attended_meetups: false
+  living_in_chennai: false
+
+two:
+  name: MyString
+  email: MyString
+  twitter_handle: MyString
+  attended_meetups: false
+  living_in_chennai: false
