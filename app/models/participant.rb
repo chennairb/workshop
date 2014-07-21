@@ -9,7 +9,7 @@ class Participant < ActiveRecord::Base
 	end
 
 	def self.have_ruby_configured_laptop_options
-		[['have', true], ["haven't", false]]
+		[['have', true], ["don't have", false]]
 	end
 
 	def self.living_in_chennai_options

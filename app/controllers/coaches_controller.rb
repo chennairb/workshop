@@ -1,6 +1,8 @@
 class CoachesController < ApplicationController
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
 
+  http_basic_authenticate_with name: "chennai.rb", password: "september7", except: :create
+
   # GET /coaches
   # GET /coaches.json
   def index
