@@ -1,5 +1,12 @@
 <style type="text/css">
 
+.container{
+	font-weight: initial;
+}
+.btn{
+	font-weight: bold;
+}
+
 .details{
 	padding: 1rem;
 	color: #2B3E50;
@@ -16,6 +23,13 @@
 }
 .details:hover{
 	color: #2B3E50;
+}
+.chennai-rb-logo{
+	background-color: #fff;
+	width: 50px;
+}
+.rails-logo{
+	width: 30px;
 }
 
 #date{
@@ -49,6 +63,9 @@
 	color: #aaa;
 	font-size: 1rem;	
 }
+#footer a{
+	color: #df691a;
+}
 
 #register-form{
 	border: 1px solid;
@@ -73,10 +90,15 @@
 
 
 <div id='intro'>
-	<h1 class='text-danger page-header' >Chennai.rb Rails Workshop</h1>
+	<h1 class='text-danger page-header' >
+		Chennai.rb Rails Workshop
+		<img src="/assets/chennai.rb.logo.png" class='chennai-rb-logo'>
+		<img src="/assets/rails.png" class='rails-logo'>
+	</h1>
 	<p class='text-primary details'>
-		A free workshop for Rails newbies by the Chennai.rb Ruby user group. <br>
-		Participants will learn to build their first Ruby on Rails application in a day full of hands on coding sessions and interesting lectures.
+		A workshop for Rails newbies by the Chennai.rb Ruby user group. <br><br>
+		Participants will learn to build their first Ruby on Rails application in a day full of hands on coding sessions and interesting lectures. <br><br>
+		The workshop is completely free, but there are limited seats (15-20). If there are more registrations, some participants will be placed on a wait-list.
 	</p>
 
 	<p id='register'>
@@ -114,6 +136,7 @@
 		<ul style='padding:0'>
 			<li> <a href="https://twitter.com/vysakh0">Vysakh Sreenivasan</a></li>
 			<li> <a href="https://twitter.com/stev4niTy">Steve Robinson</a></li>
+			<li> <a href="https://twitter.com/h6165">Abhishek Yadav</a></li>
 		</ul>
 		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" 
 			data-target="#join-as-coach-form">
@@ -125,7 +148,9 @@
 
 <div id='footer'>
 	<p class='details'>
-		"Rails", "Ruby on Rails", and the Rails logo are registered trademarks of David Heinemeier Hansson. All rights reserved.
+		"Rails", "Ruby on Rails", and the Rails logo are registered trademarks of David Heinemeier Hansson. We are not officially affilited with David Heinemeier Hansson in any way.
+		<br>
+		Built using <a href="http://bootswatch.com/superhero/">Superhero theme by Bootswatch</a>
 	</p>
 </div>
 
