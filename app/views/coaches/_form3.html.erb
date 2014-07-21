@@ -26,7 +26,7 @@
 
 </style>
 
-<%= form_for(@coach, remote: true, html: {class: 'form-inline', id: 'coach-form'}) do |f| %>
+<%= form_for(@coach, format: :json, remote: true, html: {class: 'form-inline', id: 'coach-form'}) do |f| %>
 
 	My name is <%= f.text_field :name %>
 
