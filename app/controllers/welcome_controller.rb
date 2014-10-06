@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-	http_basic_authenticate_with name: "chennai.rb", password: "september7", except: :index
+	http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASS'], except: :index
 
 	def index
 		@participant = Participant.new

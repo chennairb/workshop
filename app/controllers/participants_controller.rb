@@ -1,7 +1,7 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
 
-  http_basic_authenticate_with name: "chennai.rb", password: "september7", except: :create
+  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASS'], except: :create
 
   # GET /participants
   # GET /participants.json
