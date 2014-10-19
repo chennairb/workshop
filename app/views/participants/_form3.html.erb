@@ -3,7 +3,7 @@
 	font-size: 2rem;
 	line-height: 4rem;
 }
-#participant-form input[type='text']{
+#participant-form input[type='text'], input[type='email']{
 	line-height: 1rem;
 	color: #fff;
 	background-color: #4E5D6C;
@@ -50,7 +50,7 @@
 		in Chennai.
 
 	<br>
-	My email-id is <%= f.text_field :email %>
+	My email-id is <%= f.email_field :email %>
 
 	<br>
 	<%= f.submit 'Lets go', class: 'btn btn-primary' %>

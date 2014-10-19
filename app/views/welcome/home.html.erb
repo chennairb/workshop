@@ -1,0 +1,208 @@
+<style type="text/css">
+@media (min-width: 768px) { 
+	#introduction{
+		margin-top: 10rem;
+	}
+}
+
+a{
+	color: inherit;
+}
+a:hover{
+	color: inherit;
+}
+#introduction{
+	font-weight: bold;
+}
+
+#introduction #header{
+	background-color: #df691a;
+	color: #2B3E50;
+	padding: 1rem 2rem;
+}
+
+#introduction #details{
+	background-color: #F0AD4E;
+	color: #2B3E50;
+	padding: 1rem 2rem;
+}
+
+#introduction #date{
+	background-color: #5BC0DE;
+	color: #2B3E50;
+	padding: 1rem 2rem;
+}
+
+#introduction #venue{
+	background-color: #5CB85C;
+	color: #2B3E50;
+	padding: 1rem 2rem;
+	text-align: right;
+}
+#introduction .address{
+	font-size: 80%;
+}
+
+#register-button button{
+	margin-top: 1rem;
+	text-align: left;
+	background-color: #D9534F;
+	color: #2B3E50;
+	font-weight: bold;
+	font-size: 150%;
+}
+
+#register-form{
+	border: 1px solid;
+}
+#register-form .modal-header{
+	background-color: #df691a;
+}
+#register-form .modal-dialog{
+	top: 5rem;
+}
+#register-form .modal-footer{
+	text-align: left;
+}
+
+#notice-modal .modal-header{
+	background-color: #5CB85C;
+}
+
+
+#footer{
+	margin-top: 5rem;
+}
+#footer .details{
+	color: #aaa;
+	font-size: 1rem;	
+}
+#footer a{
+	color: #df691a;
+}
+</style>
+
+<div class='slide-holder'>
+
+	<div id='introduction' class=''>
+
+		<div id='header' class='row'>
+			<h1>Chennai Rails Workshop</h1>
+			A workshop for Rails newbies by the
+			<a href="http://chennai-ruby.org">Ruby community in Chennai.</a>
+		</div>
+
+		<div class='row'>
+			<div id='date' class='col-md-4'>
+				Saturday, 1 Nov 2014 
+				<br> 10 AM
+			</div>
+
+			<div id='venue' class='col-md-8'>
+				<a href="http://theworks.at/contact-us.html">
+					The Works@OMR <br>
+				</a>
+				<span class='address'>
+					180, 1st Main Rd, Nehru Nagar, OMR, Kottivakam, Chennai
+				</span>
+			</div>
+		</div>
+
+		<div id='details' class='row'>
+		<p>
+
+		Participants will learn to build their first Ruby on Rails application in a day full of hands on coding sessions and interesting lectures. 
+		</p>
+
+		<p>
+		The workshop is completely free, but there are limited seats (35-40). If there are more registrations, some participants will be placed on a wait-list. 
+		</p>
+
+		</div>
+
+
+		<div id='register-button' class='row'>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" 
+				data-target="#register-form">
+				Game?
+			</button>
+		</div>
+
+
+		<br><br><br>
+	</div>
+	
+
+	<div id='register-form' class='modal fade' tabindex="-1" role="dialog" 
+		aria-labelledby="register-form" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		      <h4 class="modal-title">Join as participant</h4>
+				</div>
+
+		    <div class="modal-body">
+		      <%= render 'participants/form3' %>
+		    </div>
+
+				<div class="modal-footer">
+					To join as a coach/volunteer, shout out to us at
+					<a href="http://twitter.com/chennai.rb">@chennairb</a>
+      	</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id='footer'>
+		<p class='details'>
+			"Rails", "Ruby on Rails", and the Rails logo are registered trademarks of David Heinemeier Hansson. We are not affilited with David Heinemeier Hansson in any way.
+			<br>
+		</p>
+	</div>
+
+
+	<div id='notice-modal' class='modal fade' tabindex="-1" role="dialog" 
+		aria-labelledby="register-form" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h4 class="modal-title notice-statment">
+			    	Awesome. Thanks. <br>
+			    	We'll get in touch by email.
+			    </h4>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+
+var handle_form_response = function(form){
+
+	var the_modal = form.parents('.modal');
+	var notice = $('#notice-modal');
+
+  form.on("ajax:success", function(event, data, status, xhr){
+  	the_modal.modal('hide');
+  	notice.modal('show');
+  });
+
+  form.on("ajax:error", function(event, xhr, status, error){
+  	the_modal.modal('hide');
+  });
+
+  form.on("ajax:complete", function(event){
+  });
+}
+
+$(document).ready(function(){
+	handle_form_response($('#register-form form'));
+});
+</script>
