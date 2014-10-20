@@ -24,9 +24,14 @@
 	font-size: 1.5rem;
 }
 
+#participant-form .form-notice{
+}
 </style>
 
 <%= form_for(@participant, format: :json, remote: true, html: {class: 'form-inline', id: 'participant-form'}) do |f| %>
+
+	<div class='form-notice alert-danger'>
+	</div>
 
 	My name is <%= f.text_field :name %>
 

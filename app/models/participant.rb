@@ -1,5 +1,8 @@
 class Participant < ActiveRecord::Base
 
+	validates :name, presence: true
+	validates :email, uniqueness: true, presence: true 
+
 	def self.student_or_employed_options
 		%w(Student Professional)
 	end

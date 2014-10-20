@@ -34,7 +34,10 @@ class ParticipantsController < ApplicationController
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
+        format.json { 
+          error_str = @participant.errors.full_messages.join(', ')
+          render text: error_str, status: :unprocessable_entity 
+        }
       end
     end
   end

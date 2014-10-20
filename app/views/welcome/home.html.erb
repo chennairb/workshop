@@ -7,6 +7,7 @@
 
 a{
 	color: inherit;
+	text-decoration: underline;
 }
 a:hover{
 	color: inherit;
@@ -20,7 +21,9 @@ a:hover{
 	color: #2B3E50;
 	padding: 1rem 2rem;
 }
-
+#introduction .edition{
+	font-size: 1.5rem;
+}
 #introduction #details{
 	background-color: #F0AD4E;
 	color: #2B3E50;
@@ -75,7 +78,7 @@ a:hover{
 }
 #footer .details{
 	color: #aaa;
-	font-size: 1rem;	
+	font-size: 1.5rem;
 }
 #footer a{
 	color: #df691a;
@@ -90,12 +93,13 @@ a:hover{
 			<h1>Chennai Rails Workshop</h1>
 			A workshop for Rails newbies by the
 			<a href="http://chennai-ruby.org">Ruby community in Chennai.</a>
+			<br><span class='edition'>Second edition</span>
 		</div>
 
 		<div class='row'>
 			<div id='date' class='col-md-4'>
 				Saturday, 1 Nov 2014 
-				<br> 10 AM
+				<br> 10 AM - 6 PM
 			</div>
 
 			<div id='venue' class='col-md-8'>
@@ -110,12 +114,15 @@ a:hover{
 
 		<div id='details' class='row'>
 		<p>
-
 		Participants will learn to build their first Ruby on Rails application in a day full of hands on coding sessions and interesting lectures. 
 		</p>
 
 		<p>
 		The workshop is completely free, but there are limited seats (35-40). If there are more registrations, some participants will be placed on a wait-list. 
+		</p>
+
+		<p>
+		There are no prerequisites. Everyone interested is welcome.
 		</p>
 
 		</div>
@@ -158,7 +165,7 @@ a:hover{
 
 	<div id='footer'>
 		<p class='details'>
-			"Rails", "Ruby on Rails", and the Rails logo are registered trademarks of David Heinemeier Hansson. We are not affilited with David Heinemeier Hansson in any way.
+			"Rails", "Ruby on Rails", and the Rails logo are registered trademarks of David Heinemeier Hansson. We are not affilited with him in any way.
 			<br>
 		</p>
 	</div>
@@ -195,7 +202,8 @@ var handle_form_response = function(form){
   });
 
   form.on("ajax:error", function(event, xhr, status, error){
-  	the_modal.modal('hide');
+  	var error_str = xhr.responseText;
+  	$('.form-notice').html(error_str);
   });
 
   form.on("ajax:complete", function(event){
@@ -203,6 +211,6 @@ var handle_form_response = function(form){
 }
 
 $(document).ready(function(){
-	handle_form_response($('#register-form form'));
+	handle_form_response($('#participant-form'));
 });
 </script>
