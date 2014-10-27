@@ -83,11 +83,36 @@ a:hover{
 #footer a{
 	color: #df691a;
 }
+@keyframes glowIt {
+  0% {
+    background-color: yellow;
+    box-shadow: 0 0 9px yellow;
+  }
+  50% {
+    background-color: white;
+    box-shadow: 0 0 18px white;
+    }
+  100% {
+    background-color: yellow;
+    box-shadow: 0 0 9px yellow;
+  }
+}
+#special-notice{
+	background-color: yellow;
+	color: black;
+	font-size: 1.35rem;
+	padding: 0.5rem;
+	animation: glowIt 2s infinite;
+}
 </style>
 
 <div class='slide-holder'>
 
 	<div id='introduction' class=''>
+
+		<div id='special-notice'class='row'>
+			Registrations will be closed by Tuesday night 28/10, and confirmation emails will be sent out on Wednesday. Hurry!
+		</div>
 
 		<div id='header' class='row'>
 			<h1>Chennai Rails Workshop</h1>
