@@ -34,10 +34,12 @@ group :development, :test do
 end
 
 group :development do
+	gem 'pry'
+	gem 'pry-byebug'
   gem 'better_errors', '~> 2.1.1'
   gem 'brakeman', require: false
   gem 'rack-mini-profiler', '~> 0.9.2'
-  # gem 'binding_of_caller', platforms: [:mri_21]
+  gem 'binding_of_caller', platforms: [:mri_21]
   gem 'quiet_assets', '~> 1.1.0'
   gem 'rubocop', '~> 0.28', require: false
 end
