@@ -12,6 +12,7 @@
 #  remarks                     :text
 #  created_at                  :datetime
 #  updated_at                  :datetime
+#  profession                  :string
 #
 
 require 'test_helper'

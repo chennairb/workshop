@@ -9,7 +9,7 @@ class CreateParticipants < ActiveRecord::Migration
       t.boolean :have_ruby_configured_laptop
       t.text :remarks
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
