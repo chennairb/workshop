@@ -7,8 +7,8 @@ default: &default
   host: localhost
   adapter: postgresql
   encoding: unicode
-  user: udp
-  password: udp
+  user: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
   pool: 5
   encoding: utf8
 

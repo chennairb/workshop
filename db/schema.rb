@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150115075521) do
     t.string   "twitter_handle"
     t.boolean  "attended_meetups"
     t.boolean  "living_in_chennai"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "participants", force: :cascade do |t|
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150115075521) do
     t.boolean  "living_in_chennai"
     t.boolean  "have_ruby_configured_laptop"
     t.text     "remarks"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "profession"
   end
 

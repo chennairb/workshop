@@ -10,8 +10,8 @@
 #  living_in_chennai           :boolean
 #  have_ruby_configured_laptop :boolean
 #  remarks                     :text
-#  created_at                  :datetime
-#  updated_at                  :datetime
+#  created_at                  :datetime         not null
+#  updated_at                  :datetime         not null
 #  profession                  :string
 #
 
