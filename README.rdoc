@@ -26,5 +26,20 @@ Things you may want to cover:
 * ...
 
 
+== Before committing/pushing code
+
+Before committing code, please ensure that the following commands are run from the command line (within the vagrant virtual machine)
+
+* rake
+* rake brakeman:run\[brakeman-report.html\]
+
+Once the above are run, please open the 'brakeman-report.html' and 'coverage/index.html' files to ensure that nothing is drastically different from the previous run.
+
+To ensure that the styling is consistent, please run the following command
+
+* rubocop -D --auto-correct
+* jshint .    # To run this command you will need to install 'jshint' as an npm package
+
+
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
