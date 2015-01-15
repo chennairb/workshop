@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: participants
+#
+#  id                          :integer          not null, primary key
+#  name                        :string
+#  email                       :string
+#  attended_meetups            :boolean
+#  student_or_employed         :string
+#  living_in_chennai           :boolean
+#  have_ruby_configured_laptop :boolean
+#  remarks                     :text
+#  created_at                  :datetime
+#  updated_at                  :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
