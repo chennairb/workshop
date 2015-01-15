@@ -10,6 +10,11 @@
 #  living_in_chennai :boolean
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  edition_id        :integer
+#
+# Indexes
+#
+#  index_coaches_on_edition_id  (edition_id)
 #
 
 require 'test_helper'
