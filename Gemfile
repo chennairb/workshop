@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby "2.2.0"
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+# gem 'sqlite3'
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -32,6 +32,16 @@ group :development, :test do
   gem 'did_you_mean', '~> 0.9.4'
   gem 'annotate', '~> 2.6.5'
 end
+
+group :development do
+  gem 'better_errors', '~> 2.1.1'
+  gem 'brakeman', require: false
+  gem 'rack-mini-profiler', '~> 0.9.2'
+  # gem 'binding_of_caller', platforms: [:mri_21]
+  gem 'quiet_assets', '~> 1.1.0'
+  gem 'rubocop', '~> 0.28', require: false
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
