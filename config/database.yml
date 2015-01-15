@@ -3,12 +3,19 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
-development:
+default: &default
   host: localhost
   adapter: postgresql
   encoding: unicode
-  database: workshop_chennai_rb_development
   user: abhishekyadav
   password:
   pool: 5
+  encoding: utf8
 
+development:
+  <<: *default
+  database: workshop_chennai_rb_development
+
+test:
+  <<: *default
+  database: workshop_chennai_rb_test
