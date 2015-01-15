@@ -8,7 +8,14 @@ development:
   adapter: postgresql
   encoding: unicode
   database: workshop_chennai_rb_development
-  user: abhishekyadav
-  password:
+  user: udp
+  password: udp
   pool: 5
-
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: workshop_chennai_rb_development
+  user: udp
+  password: udp
+  pool: 5

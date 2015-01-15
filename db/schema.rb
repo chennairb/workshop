@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20140720101009) do
 
-  create_table "coaches", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "coaches", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "twitter_handle"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140720101009) do
     t.datetime "updated_at"
   end
 
-  create_table "participants", force: true do |t|
+  create_table "participants", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.boolean  "attended_meetups"
