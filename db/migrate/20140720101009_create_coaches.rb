@@ -7,7 +7,7 @@ class CreateCoaches < ActiveRecord::Migration
       t.boolean :attended_meetups
       t.boolean :living_in_chennai
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

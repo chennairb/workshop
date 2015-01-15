@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :editions
+
   resources :coaches
   resources :participants
   #root 'welcome#index'
