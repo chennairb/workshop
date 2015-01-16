@@ -6,7 +6,7 @@ class CreateEditionParticipants < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :edition_participants, :editions
-    add_foreign_key :edition_participants, :participants
+    add_foreign_key :edition_participants, :editions, on_delete: :cascade
+    add_foreign_key :edition_participants, :participants, on_delete: :cascade
   end
 end
