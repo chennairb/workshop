@@ -25,6 +25,9 @@ Things you may want to cover:
 
 * ...
 
+== One time setup for project
+
+Create two ENV variables for ENV["ADMIN_PASS"] and ENV["ADMIN_USER"] for username and password for admin user
 
 == Before committing/pushing code
 
