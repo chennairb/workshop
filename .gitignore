@@ -16,3 +16,4 @@
 /tmp
 /config/secrets.yml
 /coverage/*
+/brakeman-report.html

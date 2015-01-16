@@ -10,8 +10,8 @@
 #
 
 class Edition < ActiveRecord::Base
-	has_many :edition_participants
-	has_many :participants, through: :edition_participants, dependent: :destroy
-	has_many :coach_editions
-	has_many :coaches, through: :coach_editions, dependent: :destroy
+  has_many :edition_participants
+  has_many :participants, through: :edition_participants, dependent: :destroy
+  has_many :coach_editions
+  has_many :coaches, through: :coach_editions, dependent: :destroy
 end

@@ -62,13 +62,14 @@ class EditionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_edition
-      @edition = Edition.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def edition_params
-      params.require(:edition).permit(:name, :date_of_event)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_edition
+    @edition = Edition.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def edition_params
+    params.require(:edition).permit(:name, :date_of_event)
+  end
 end

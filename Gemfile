@@ -37,8 +37,8 @@ group :development, :test do
 end
 
 group :development do
-	gem 'pry'
-	gem 'pry-byebug'
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'better_errors', '~> 2.1.1'
   gem 'brakeman', require: false
   gem 'rack-mini-profiler', '~> 0.9.2'
