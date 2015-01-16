@@ -3,6 +3,9 @@ require 'test_helper'
 class ParticipantsControllerTest < ActionController::TestCase
   setup do
     @participant = participants(:one)
+    basic = ActionController::HttpAuthentication::Basic
+    credentials = basic.encode_credentials(ENV['ADMIN_USER'], ENV['ADMIN_PASS'])
+    request.headers['Authorization'] = credentials
   end
 
   test 'should get index' do

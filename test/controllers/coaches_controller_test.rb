@@ -3,6 +3,9 @@ require 'test_helper'
 class CoachesControllerTest < ActionController::TestCase
   setup do
     @coach = coaches(:one)
+    basic = ActionController::HttpAuthentication::Basic
+    credentials = basic.encode_credentials(ENV['ADMIN_USER'], ENV['ADMIN_PASS'])
+    request.headers['Authorization'] = credentials
   end
 
   test 'should get index' do
