@@ -10,6 +10,7 @@
 #
 
 class Edition < ActiveRecord::Base
-	has_many :participants
+	has_many :edition_participants
+	has_many :participants, through: :edition_participants
 	has_many :coaches
 end

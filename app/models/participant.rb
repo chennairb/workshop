@@ -26,7 +26,8 @@ class Participant < ActiveRecord::Base
 	validates :name, presence: true
 	validates :email, uniqueness: true, presence: true 
 	
-	belongs_to :edition
+	has_many :edition_participants
+	has_many :editions, through: :edition_participants
 
 	def self.student_or_employed_options
 		%w(Student Professional)
