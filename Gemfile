@@ -37,8 +37,8 @@ group :development, :test do
 end
 
 group :development do
-	gem 'pry'
-	gem 'pry-byebug'
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'better_errors', '~> 2.1.1'
   gem 'brakeman', require: false
   gem 'rack-mini-profiler', '~> 0.9.2'
@@ -47,6 +47,10 @@ group :development do
   gem 'rubocop', '~> 0.28', require: false
 end
 
+group :test do
+  # gem 'metric_fu'
+  gem 'simplecov', '~> 0.9.1', require: false
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

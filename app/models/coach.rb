@@ -13,16 +13,14 @@
 #
 
 class Coach < ActiveRecord::Base
+  has_many :coach_editions
+  has_many :coaches, through: :coach_editions
 
-	has_many :coach_editions
-	has_many :coaches, through: :coach_editions
+  def self.attended_meetups_options
+    [['have', true], ["haven't", false]]
+  end
 
-	def self.attended_meetups_options
-		[['have', true], ["haven't", false]]
-	end
-
-	def self.living_in_chennai_options
-		[['live', true], ["don't live", false]]
-	end
-
+  def self.living_in_chennai_options
+    [['live', true], ["don't live", false]]
+  end
 end

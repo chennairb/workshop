@@ -5,18 +5,18 @@ class EditionsControllerTest < ActionController::TestCase
     @edition = editions(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:editions)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create edition" do
+  test 'should create edition' do
     assert_difference('Edition.count') do
       post :create, edition: { date_of_event: @edition.date_of_event, name: @edition.name }
     end
@@ -24,22 +24,22 @@ class EditionsControllerTest < ActionController::TestCase
     assert_redirected_to edition_path(assigns(:edition))
   end
 
-  test "should show edition" do
+  test 'should show edition' do
     get :show, id: @edition
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @edition
     assert_response :success
   end
 
-  test "should update edition" do
+  test 'should update edition' do
     patch :update, id: @edition, edition: { date_of_event: @edition.date_of_event, name: @edition.name }
     assert_redirected_to edition_path(assigns(:edition))
   end
 
-  test "should destroy edition" do
+  test 'should destroy edition' do
     assert_difference('Edition.count', -1) do
       delete :destroy, id: @edition
     end

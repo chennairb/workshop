@@ -64,13 +64,14 @@ class CoachesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_coach
-      @coach = Coach.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def coach_params
-      params.require(:coach).permit(:name, :email, :twitter_handle, :attended_meetups, :living_in_chennai)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_coach
+    @coach = Coach.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def coach_params
+    params.require(:coach).permit(:name, :email, :twitter_handle, :attended_meetups, :living_in_chennai)
+  end
 end

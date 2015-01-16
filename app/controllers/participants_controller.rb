@@ -34,10 +34,10 @@ class ParticipantsController < ApplicationController
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
-        format.json { 
+        format.json do
           error_str = @participant.errors.full_messages.join(', ')
-          render text: error_str, status: :unprocessable_entity 
-        }
+          render text: error_str, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -67,13 +67,14 @@ class ParticipantsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_participant
-      @participant = Participant.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def participant_params
-      params.require(:participant).permit(:name, :email, :attended_meetups, :living_in_chennai, :student_or_employed, :have_ruby_configured_laptop, :remarks)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_participant
+    @participant = Participant.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def participant_params
+    params.require(:participant).permit(:name, :email, :attended_meetups, :living_in_chennai, :student_or_employed, :have_ruby_configured_laptop, :remarks)
+  end
 end
