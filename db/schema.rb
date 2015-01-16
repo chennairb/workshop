@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115081949) do
+ActiveRecord::Schema.define(version: 20150116093812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coach_editions", force: :cascade do |t|
+    t.integer  "coach_id"
+    t.integer  "edition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "coach_editions", ["coach_id"], name: "index_coach_editions_on_coach_id", using: :btree
+  add_index "coach_editions", ["edition_id"], name: "index_coach_editions_on_edition_id", using: :btree
 
   create_table "coaches", force: :cascade do |t|
     t.string   "name"
@@ -24,10 +34,17 @@ ActiveRecord::Schema.define(version: 20150115081949) do
     t.boolean  "living_in_chennai"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "edition_id"
   end
 
-  add_index "coaches", ["edition_id"], name: "index_coaches_on_edition_id", using: :btree
+  create_table "edition_participants", force: :cascade do |t|
+    t.integer  "edition_id"
+    t.integer  "participant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "edition_participants", ["edition_id"], name: "index_edition_participants_on_edition_id", using: :btree
+  add_index "edition_participants", ["participant_id"], name: "index_edition_participants_on_participant_id", using: :btree
 
   create_table "editions", force: :cascade do |t|
     t.string   "name"
@@ -47,12 +64,12 @@ ActiveRecord::Schema.define(version: 20150115081949) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "profession"
-    t.integer  "edition_id"
   end
 
-  add_index "participants", ["edition_id"], name: "index_participants_on_edition_id", using: :btree
   add_index "participants", ["email"], name: "index_participants_on_email", using: :btree
 
-  add_foreign_key "coaches", "editions"
-  add_foreign_key "participants", "editions"
+  add_foreign_key "coach_editions", "coaches", on_delete: :cascade
+  add_foreign_key "coach_editions", "editions", on_delete: :cascade
+  add_foreign_key "edition_participants", "editions", on_delete: :cascade
+  add_foreign_key "edition_participants", "participants", on_delete: :cascade
 end

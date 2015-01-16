@@ -13,12 +13,10 @@
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
 #  profession                  :string
-#  edition_id                  :integer
 #
 # Indexes
 #
-#  index_participants_on_edition_id  (edition_id)
-#  index_participants_on_email       (email)
+#  index_participants_on_email  (email)
 #
 
 require 'test_helper'

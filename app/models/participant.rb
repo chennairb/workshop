@@ -13,12 +13,10 @@
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
 #  profession                  :string
-#  edition_id                  :integer
 #
 # Indexes
 #
-#  index_participants_on_edition_id  (edition_id)
-#  index_participants_on_email       (email)
+#  index_participants_on_email  (email)
 #
 
 class Participant < ActiveRecord::Base
@@ -26,7 +24,8 @@ class Participant < ActiveRecord::Base
 	validates :name, presence: true
 	validates :email, uniqueness: true, presence: true 
 	
-	belongs_to :edition
+	has_many :edition_participants
+	has_many :editions, through: :edition_participants
 
 	def self.student_or_employed_options
 		%w(Student Professional)
