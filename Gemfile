@@ -47,6 +47,10 @@ group :development do
   gem 'rubocop', '~> 0.28', require: false
 end
 
+group :test do
+  # gem 'metric_fu'
+  gem 'simplecov', '~> 0.9.1', require: false
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
