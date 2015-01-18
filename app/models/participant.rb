@@ -3,25 +3,21 @@
 # Table name: participants
 #
 #  id                          :integer          not null, primary key
-#  name                        :string           not null
-#  email                       :string           not null
+#  name                        :string(255)
+#  email                       :string(255)
 #  attended_meetups            :boolean
-#  student_or_employed         :string
+#  student_or_employed         :string(255)
 #  living_in_chennai           :boolean
 #  have_ruby_configured_laptop :boolean
 #  remarks                     :text
-#  created_at                  :datetime         not null
-#  updated_at                  :datetime         not null
+#  created_at                  :datetime
+#  updated_at                  :datetime
 #  profession                  :string
-#
-# Indexes
-#
-#  index_participants_on_email  (email)
 #
 
 class Participant < ActiveRecord::Base
   validates :name, presence: true
-  validates :email, uniqueness: true, presence: true
+  validate :email_within_current_edition
 
   has_many :edition_participants
   has_many :editions, through: :edition_participants
@@ -41,4 +37,21 @@ class Participant < ActiveRecord::Base
   def self.living_in_chennai_options
     [['live', true], ["don't live", false]]
   end
+
+  def already_registered_for?(edition)
+    edition_ids.include?(edition.id)
+  end
+
+  def email_within_current_edition
+    if already_registered_for?(Edition.current)
+      errors.add(:email, 'is already registered for this edition')
+    end
+  end
+
+  # Done this way to get a false if EditionParticipant creation somehow fails
+  def save_with_current_edition
+    save &&
+    EditionParticipant.create(participant_id: id, edition_id: Edition.current.id)
+  end
+
 end

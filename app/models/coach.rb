@@ -3,13 +3,13 @@
 # Table name: coaches
 #
 #  id                :integer          not null, primary key
-#  name              :string
-#  email             :string
-#  twitter_handle    :string
+#  name              :string(255)
+#  email             :string(255)
+#  twitter_handle    :string(255)
 #  attended_meetups  :boolean
 #  living_in_chennai :boolean
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  created_at        :datetime
+#  updated_at        :datetime
 #
 
 class Coach < ActiveRecord::Base

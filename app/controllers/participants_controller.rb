@@ -1,12 +1,15 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
 
-  http_basic_authenticate_with name: ENV['ADMIN_USER'], password: ENV['ADMIN_PASS'], except: :create
+  http_basic_authenticate_with name:     ENV['ADMIN_USER'],
+                               password: ENV['ADMIN_PASS'],
+                               except: :create
 
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.all
+    #@participants = Participant.all
+    @participants = current_edition.participants.all
   end
 
   # GET /participants/1
@@ -26,16 +29,18 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.json
   def create
-    @participant = Participant.new(participant_params)
+    @participant = Participant.find_by_email(participant_params[:email])
+    @participant ||= Participant.new(participant_params)
 
     respond_to do |format|
-      if @participant.save
+      if @participant.save_with_current_edition
         format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
         format.json do
           error_str = @participant.errors.full_messages.join(', ')
+          error_str = 'Some error occurred' if error_str.empty?
           render text: error_str, status: :unprocessable_entity
         end
       end
