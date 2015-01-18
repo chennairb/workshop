@@ -41,7 +41,7 @@ class ParticipantsController < ApplicationController
         format.json do
           error_str = @participant.errors.full_messages.join(', ')
           error_str = 'Some error occurred' if error_str.empty?
-          render text: error_str, status: :unprocessable_entity
+          render text: error_str.html_safe, status: :unprocessable_entity
         end
       end
     end
