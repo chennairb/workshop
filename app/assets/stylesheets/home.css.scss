@@ -27,6 +27,7 @@ a:hover{
 	background-color: #F0AD4E;
 	color: #2B3E50;
 	padding: 1rem 2rem;
+	font-size: 1.75rem;
 }
 
 #introduction #date{
@@ -43,6 +44,13 @@ a:hover{
 }
 #introduction .address{
 	font-size: 80%;
+}
+
+#introduction #contact{
+	color: #2B3E50;
+	background-color: #F38095;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
 }
 
 #register-button button{

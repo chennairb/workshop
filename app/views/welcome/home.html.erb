@@ -1,21 +1,22 @@
 <div class='slide-holder'>
+
 	<div id='introduction' class=''>
 
-		<div id='special-notice'class='row'>
+		<!--div id='special-notice'class='row'>
 			Registrations will be closed by Tuesday night 28/10, and confirmation emails will be sent out on Wednesday. Hurry!
-		</div>
+		</div-->
 
 		<div id='header' class='row'>
-			<h1>Chennai Rails Workshop</h1>
-			A workshop for Rails newbies by the
+			<h1>Chennai Rails+ Workshop</h1>
+			A workshop for Rails <b>newbie+</b> by the
 			<a href="http://chennai-ruby.org">Ruby community in Chennai.</a>
-			<br><span class='edition'>Second edition</span>
+			<br><!--span class='edition'>Third edition</span-->
 		</div>
 
 		<div class='row'>
 			<div id='date' class='col-md-4'>
-				Saturday, 1 Nov 2014 
-				<br> 10 AM - 6 PM
+				Saturday, 24 Jan 2015
+				<br> 11 AM - 6 PM
 			</div>
 
 			<div id='venue' class='col-md-8'>
@@ -30,25 +31,42 @@
 
 		<div id='details' class='row'>
 		<p>
-		Participants will learn to build their first Ruby on Rails application in a day full of hands on coding sessions and interesting lectures. 
+			This workshop is meant for Rails enthusiasts who have built their first app, and are looking for guidance with the next step. We'll try to cover a few topics that we think a newbie+ will be able to appreciate and put to practical use.
+			<a href="https://github.com/chennairb/workshop/wiki/Agenda-for-Intermediate-workshop">Here is the tentative syllabus for the workshop</a>
 		</p>
 
 		<p>
-		The workshop is completely free, but there are limited seats (35-40). If there are more registrations, some participants will be placed on a wait-list. 
+		  The workshop is completely free, but the seats are limited.
 		</p>
 
 		<p>
-		There are no prerequisites. Everyone interested is welcome.
+		  Basic familiarity with Rails/Ruby is a prerequisite. We conduct workshops for complete beginners too, please watch this space for announcements if you are looking for one.
 		</p>
 
 		</div>
 
+		<div id='contact' class='row panel panel-default'>
+			<p>
+				For any questions/clarifications, please head over to the
+				<a href="http://groups.google.com/forum/#!forum/chennairb">mailing list</a>
+				or ping us on Slack (ask for an invite <a href="http://chennai-ruby.org/">here</a>).
+				You can also email Abhishek at zerothabhishek@gmail.com.
+			</p>
+		</div>
+
 
 		<div id='register-button' class='row'>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" 
-				data-target="#register-form">
-				Game?
-			</button>
+			<% if ENV['open'] == '1' %>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+					      data-target="#register-form">
+					Register
+				</button>
+			<% else %>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+	              data-target="#register-form" disabled='disabled'>
+					Registration opens on Monday Jan-19
+				</button>
+			<% end %>
 		</div>
 
 
