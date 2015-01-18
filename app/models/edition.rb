@@ -14,4 +14,8 @@ class Edition < ActiveRecord::Base
   has_many :participants, through: :edition_participants, dependent: :destroy
   has_many :coach_editions
   has_many :coaches, through: :coach_editions, dependent: :destroy
+
+  def self.current
+    self.where(name: 'Jan-2015').last
+  end
 end
