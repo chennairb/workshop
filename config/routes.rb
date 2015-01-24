@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get '/boring'       => 'boring#index'
+  get '/boring/count' => 'boring#count'
+  get '/boring/reset' => 'boring#reset'
+  post '/boring/set'  => 'boring#set'
+
   resources :editions
 
   resources :coaches
