@@ -5,6 +5,5 @@ class CreateBorings < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    Boring.create(count: 0)
   end
 end
