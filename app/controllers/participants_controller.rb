@@ -3,12 +3,12 @@ class ParticipantsController < ApplicationController
 
   http_basic_authenticate_with name:     ENV['ADMIN_USER'],
                                password: ENV['ADMIN_PASS'],
-                               except: :create
+                               except:   :create
 
   # GET /participants
   # GET /participants.json
   def index
-    #@participants = Participant.all
+    # @participants = Participant.all
     @participants = current_edition.participants.all
   end
 

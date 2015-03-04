@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get '/boring'       => 'boring#index'
   get '/boring/count' => 'boring#count'
   get '/boring/reset' => 'boring#reset'

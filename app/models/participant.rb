@@ -51,7 +51,6 @@ class Participant < ActiveRecord::Base
   # Done this way to get a false if EditionParticipant creation somehow fails
   def save_with_current_edition
     save &&
-    EditionParticipant.create(participant_id: id, edition_id: Edition.current.id)
+      EditionParticipant.create(participant_id: id, edition_id: Edition.current.id)
   end
-
 end
