@@ -9,7 +9,7 @@ class ParticipantsController < ApplicationController
   # GET /participants.json
   def index
     # @participants = Participant.all
-    @participants = current_edition.participants.all
+    @participants = current_edition.nil? ? [] : current_edition.participants.all
   end
 
   # GET /participants/1
@@ -72,6 +72,10 @@ class ParticipantsController < ApplicationController
   end
 
   private
+
+  def current_edition
+    Edition.current
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_participant

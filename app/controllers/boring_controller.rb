@@ -4,7 +4,7 @@ class BoringController < ApplicationController
 
   # POST /boring/set
   def set
-    @boring = Boring.first
+    @boring = Boring.first || Boring.new
     @boring.count ||= 0
     @boring.count += 1
     @boring.save!
@@ -13,13 +13,13 @@ class BoringController < ApplicationController
 
   # GET /borings
   def count
-    @boring = Boring.first
+    @boring = Boring.first || Boring.new
     render text: @boring.count
   end
 
   # GET /borings/reset
   def reset
-    @boring = Boring.first
+    @boring = Boring.first || Boring.new
     @boring.count = 0
     @boring.save
     render text: 'done reset'
