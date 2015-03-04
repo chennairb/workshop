@@ -39,7 +39,7 @@ class Participant < ActiveRecord::Base
   end
 
   def already_registered_for?(edition)
-    edition_ids.include?(edition.id)
+    editions.include?(edition)
   end
 
   def email_within_current_edition

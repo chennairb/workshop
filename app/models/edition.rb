@@ -16,6 +16,6 @@ class Edition < ActiveRecord::Base
   has_many :coaches, through: :coach_editions, dependent: :destroy
 
   def self.current
-    where(name: 'Jan-2015').last
+    where(name: 'Mar-2015').last
   end
 end
