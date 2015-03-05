@@ -4,8 +4,8 @@ ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
-gem 'pg'
+# gem 'sqlite3', '~> 1.3.10'
+gem 'pg', '~> 0.18.1'
 
 # Use puma as the app server
 gem 'puma', '~> 2.9.2'
@@ -20,9 +20,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.3'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -34,16 +34,16 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
   gem 'did_you_mean', '~> 0.9.4'
   gem 'annotate', '~> 2.6.5'
+  gem 'pry', '~> 0.10.1'
+  gem 'pry-byebug', '~> 3.0.1'
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', platforms: [:mri_21]
+  gem 'quiet_assets', '~> 1.1.0'
 end
 
 group :development do
-  gem 'pry'
-  gem 'pry-byebug'
-  gem 'better_errors', '~> 2.1.1'
-  gem 'brakeman', require: false
+  gem 'brakeman', '~> 3.0.1', require: false
   gem 'rack-mini-profiler', '~> 0.9.2'
-  gem 'binding_of_caller', platforms: [:mri_21]
-  gem 'quiet_assets', '~> 1.1.0'
   gem 'rubocop', '~> 0.28', require: false
 end
 
@@ -64,4 +64,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor', '~> 0.0.3', group: :production
