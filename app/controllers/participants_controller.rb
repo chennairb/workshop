@@ -29,11 +29,11 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.json
   def create
-    @participant = Participant.find_by_email(participant_params[:email])
+    @participant = Participant.where(email: participant_params[:email]).last
     @participant ||= Participant.new(participant_params)
 
     respond_to do |format|
-      if @participant.save_with_current_edition
+      if @participant.save
         format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
         format.json { render :show, status: :created, location: @participant }
       else

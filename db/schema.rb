@@ -11,8 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116093812) do
+ActiveRecord::Schema.define(version: 20150309175928) do
 
+  create_table "borings", force: :cascade do |t|
+    t.integer  "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,8 +32,8 @@ ActiveRecord::Schema.define(version: 20150116093812) do
   add_index "coach_editions", ["edition_id"], name: "index_coach_editions_on_edition_id", using: :btree
 
   create_table "coaches", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
+    t.string   "name",              null: false
+    t.string   "email",             null: false
     t.string   "twitter_handle"
     t.boolean  "attended_meetups"
     t.boolean  "living_in_chennai"
@@ -47,8 +52,8 @@ ActiveRecord::Schema.define(version: 20150116093812) do
   add_index "edition_participants", ["participant_id"], name: "index_edition_participants_on_participant_id", using: :btree
 
   create_table "editions", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "date_of_event"
+    t.string   "name",          null: false
+    t.datetime "date_of_event", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
