@@ -3,9 +3,9 @@
 # Table name: coaches
 #
 #  id                :integer          not null, primary key
-#  name              :string(255)      not null
-#  email             :string(255)      not null
-#  twitter_handle    :string(255)
+#  name              :string           not null
+#  email             :string           not null
+#  twitter_handle    :string
 #  attended_meetups  :boolean
 #  living_in_chennai :boolean
 #  created_at        :datetime         not null

@@ -28,7 +28,19 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+group :development do
+  gem 'brakeman', '~> 3.0.1', require: false
+  gem 'rack-mini-profiler', '~> 0.9.2'
+
+  gem 'rubocop', '~> 0.28', require: false
+  # gem 'pronto', '~> 0.3.3'
+  # gem 'pippi', '~> 0.0.3'
+  gem 'metric_fu', '~> 4.11.4'
+  gem 'lol_dba', '~> 1.6.4'
+end
+
 group :development, :test do
+  gem 'better_errors', '~> 2.1.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 1.2.0'
   gem 'pry-rails', '~> 0.3.2'
@@ -36,15 +48,9 @@ group :development, :test do
   gem 'annotate', '~> 2.6.5'
   gem 'pry', '~> 0.10.1'
   gem 'pry-byebug', '~> 3.0.1'
-  gem 'better_errors', '~> 2.1.1'
-  gem 'binding_of_caller', platforms: [:mri_21]
+  gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_21]
   gem 'quiet_assets', '~> 1.1.0'
-end
-
-group :development do
-  gem 'brakeman', '~> 3.0.1', require: false
-  gem 'rack-mini-profiler', '~> 0.9.2'
-  gem 'rubocop', '~> 0.28', require: false
+  gem 'bullet', '~> 4.14.4'
 end
 
 group :test do

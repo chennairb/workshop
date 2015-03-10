@@ -3,10 +3,10 @@
 # Table name: participants
 #
 #  id                          :integer          not null, primary key
-#  name                        :string(255)      not null
-#  email                       :string(255)      not null
+#  name                        :string           not null
+#  email                       :string           not null
 #  attended_meetups            :boolean
-#  student_or_employed         :string(255)
+#  student_or_employed         :string
 #  living_in_chennai           :boolean
 #  have_ruby_configured_laptop :boolean
 #  remarks                     :text
