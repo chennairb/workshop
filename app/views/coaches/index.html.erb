@@ -19,8 +19,8 @@
         <td><%= coach.name %></td>
         <td><%= coach.email %></td>
         <td><%= coach.twitter_handle %></td>
-        <td><%= coach.attended_meetups %></td>
-        <td><%= coach.living_in_chennai %></td>
+        <td><%= tick_mark(coach.attended_meetups) %></td>
+        <td><%= tick_mark(coach.living_in_chennai) %></td>
         <td><%= link_to 'Show', coach %></td>
         <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
         <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
