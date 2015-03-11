@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/thoughtworks/lol_dba.git
+  revision: 8c7077449ede05476f8e324e7c0e33cfc4072845
+  specs:
+    lol_dba (1.6.5)
+      actionpack (>= 3.0, < 5.0)
+      activerecord (>= 3.0, < 5.0)
+      railties (>= 3.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,10 +147,6 @@ GEM
     json_pure (1.8.2)
     launchy (2.4.3)
       addressable (~> 2.3)
-    lol_dba (1.6.4)
-      actionpack (>= 3.0)
-      activerecord (>= 3.0)
-      railties (>= 3.0)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -326,7 +331,7 @@ DEPENDENCIES
   did_you_mean (~> 0.9.4)
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.3)
-  lol_dba (~> 1.6.4)
+  lol_dba!
   metric_fu (~> 4.11.4)
   pg (~> 0.18.1)
   pry (~> 0.10.1)

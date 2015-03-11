@@ -36,7 +36,7 @@ group :development do
   # gem 'pronto', '~> 0.3.3'
   # gem 'pippi', '~> 0.0.3'
   gem 'metric_fu', '~> 4.11.4'
-  gem 'lol_dba', '~> 1.6.4'
+  gem 'lol_dba', github: 'thoughtworks/lol_dba'
 end
 
 group :development, :test do
