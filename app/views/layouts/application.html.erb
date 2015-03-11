@@ -7,7 +7,7 @@
 
   <title>Chennai.rb Rails Workshop</title>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>  
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -21,11 +21,11 @@
 
 </head>
 <body>
-	
+
   <div class="container">
     <%= render partial: 'shared/flash' %>
     <div class='row'>
-    	<div class="col-md-8 col-md-offset-2">
+      <div class="col-md-12">
     		<%= yield %>
     	</div>
     </div>
