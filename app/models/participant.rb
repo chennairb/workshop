@@ -21,6 +21,8 @@
 
 class Participant < ActiveRecord::Base
   validates :name, :email, presence: true
+  validates :email, email: true
+  validate :current_edition_present
   validate :email_within_current_edition, on: :create
 
   has_many :edition_participants
@@ -48,6 +50,10 @@ class Participant < ActiveRecord::Base
 
   def already_registered_for?(edition)
     editions.include?(edition)
+  end
+
+  def current_edition_present
+    errors.add(:base, 'Current edition not configured/found') unless Edition.current.present?
   end
 
   def email_within_current_edition
