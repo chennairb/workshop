@@ -1,3 +1,30 @@
 // Place all the styles related to the participants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#participant-form{
+	font-size: 2rem;
+	line-height: 4rem;
+}
+#participant-form input[type='text'], input[type='email']{
+	line-height: 1rem;
+	color: #fff;
+	background-color: #4E5D6C;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px dotted;
+}
+
+#participant-form select{
+	color: #2B3E50;
+	font-size: 1.5rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+#participant-form input[type='submit']{
+	font-size: 1.5rem;
+}
+
+#participant-form .form-notice{
+}

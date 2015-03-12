@@ -1,45 +1,33 @@
-<%= form_for(@participant) do |f| %>
-  <% if @participant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@participant.errors.count, "error") %> prohibited this participant from being saved:</h2>
+<%= form_for(@participant, format: :json, remote: true, html: {class: 'form-inline', id: 'participant-form'}) do |f| %>
 
-      <ul>
-      <% @participant.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<div class='form-notice alert-danger'>
+	</div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :attended_meetups %><br>
-    <%= f.check_box :attended_meetups %>
-  </div>
-  <div class="field">
-    <%= f.label :living_in_chennai %><br>
-    <%= f.check_box :living_in_chennai %>
-  </div>
-  <div class="field">
-    <%= f.label :student_or_employed %><br>
-    <%= f.text_field :student_or_employed %>
-  </div>
-  <div class="field">
-    <%= f.label :have_ruby_configured_laptop %><br>
-    <%= f.check_box :have_ruby_configured_laptop %>
-  </div>
-  <div class="field">
-    <%= f.label :remarks %><br>
-    <%= f.text_area :remarks %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	My name is <%= f.text_field :name %>
+
+	<br>
+	I'm a <%= f.select :student_or_employed,
+		options_for_select(Participant.student_or_employed_options) %>.
+
+	<br>
+	I <%= f.select :attended_meetups,
+		options_for_select(Participant.attended_meetups_options) %>
+		attended Chennai.rb meetups before.
+
+	<br>
+	I <%= f.select :have_ruby_configured_laptop,
+		options_for_select(Participant.have_ruby_configured_laptop_options) %>
+		a Ruby configured laptop.
+
+	<br>
+	I <%= f.select :living_in_chennai,
+		options_for_select(Participant.living_in_chennai_options) %>
+		in Chennai.
+
+	<br>
+	My email-id is <%= f.email_field :email %>
+
+	<br>
+	<%= f.submit 'Lets go', class: 'btn btn-primary' %>
+
 <% end %>

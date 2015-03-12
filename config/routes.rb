@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :coaches
   resources :participants
-  # root 'welcome#index'
   root 'welcome#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
