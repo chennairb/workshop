@@ -3,6 +3,11 @@ require 'test_helper'
 class EditionsControllerTest < ActionController::TestCase
   setup do
     @edition = editions(:one)
+    @edition.name = "#{@edition.name}-#{rand(100)}"
+
+    basic = ActionController::HttpAuthentication::Basic
+    credentials = basic.encode_credentials(ENV['ADMIN_USER'], ENV['ADMIN_PASS'])
+    request.headers['Authorization'] = credentials
   end
 
   test 'should get index' do

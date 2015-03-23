@@ -1,8 +1,22 @@
 require 'test_helper'
 
 class ParticipantsControllerTest < ActionController::TestCase
+
+  def mock_current_edition
+    Edition.class_eval do
+      def self.current
+        Edition.last
+      end
+    end
+  end
+
   setup do
+    mock_current_edition
+
+    @edition = editions(:one)
     @participant = participants(:one)
+    @participant.email = "p#{rand(100)}@example.org"
+
     basic = ActionController::HttpAuthentication::Basic
     credentials = basic.encode_credentials(ENV['ADMIN_USER'], ENV['ADMIN_PASS'])
     request.headers['Authorization'] = credentials

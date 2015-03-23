@@ -39,3 +39,7 @@ Rails.application.configure do
 
   config.active_support.test_order = :random
 end
+
+ENV['ADMIN_USER'] ||= 'sample'
+ENV['ADMIN_PASS'] ||= 'sample'
+
