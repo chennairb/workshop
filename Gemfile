@@ -8,14 +8,14 @@ gem 'rails', '4.2.1'
 gem 'pg', '~> 0.18.1'
 
 # Use puma as the app server
-gem 'puma', '~> 2.9.2'
+gem 'puma', '~> 2.11.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -32,7 +32,7 @@ group :development do
   gem 'brakeman', '~> 3.0.1', require: false
   gem 'rack-mini-profiler', '~> 0.9.2'
 
-  gem 'rubocop', '~> 0.28', require: false
+  gem 'rubocop', '~> 0.30', require: false
   # gem 'pronto', '~> 0.3.3'
   # gem 'pippi', '~> 0.0.3'
   gem 'metric_fu', '~> 4.11.4'
@@ -42,12 +42,12 @@ end
 group :development, :test do
   gem 'better_errors', '~> 2.1.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 1.2.0'
+  gem 'spring', '~> 1.3.4'
   gem 'pry-rails', '~> 0.3.2'
   gem 'did_you_mean', '~> 0.9.4'
   gem 'annotate', '~> 2.6.5'
   gem 'pry', '~> 0.10.1'
-  gem 'pry-byebug', '~> 3.0.1'
+  gem 'pry-byebug', '~> 3.1.0'
   gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_21]
   gem 'quiet_assets', '~> 1.1.0'
   gem 'bullet', '~> 4.14.4'
