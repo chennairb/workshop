@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ParticipantsControllerTest < ActionController::TestCase
-
   def mock_current_edition
     Edition.class_eval do
       def self.current

@@ -42,4 +42,3 @@ end
 
 ENV['ADMIN_USER'] ||= 'sample'
 ENV['ADMIN_PASS'] ||= 'sample'
-
