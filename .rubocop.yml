@@ -1,3 +1,4 @@
+inherit_from: .rubocop_todo.yml
 AllCops:
   Include:
     - 'Capfile'
@@ -37,8 +38,6 @@ AllCops:
 Lint/HandleExceptions:
   Exclude:
     - 'config/unicorn.rb'
-Metrics/LineLength:
-  Enabled: false
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*devise_create_admin_users.rb'
@@ -46,8 +45,6 @@ Style/AlignHash:
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
 Style/Documentation:
-  Enabled: false
-Style/RegexpLiteral:
   Enabled: false
 Style/CollectionMethods:
   # Mapping from undesired method to desired_method
